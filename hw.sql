@@ -11,9 +11,11 @@ WHERE amount BETWEEN 3.99 AND 5.99;
 -- 5607
 
 -- Q3
-SELECT MAX(film_id)
-FROM inventory;
--- 1000
+SELECT film_id, COUNT(film_id)
+FROM inventory
+GROUP BY film_id
+ORDER BY COUNT(film_id) DESC;
+-- there are 72 films with 8 copies
 
 -- Q4
 SELECT COUNT(last_name)
